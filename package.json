@@ -1,6 +1,17 @@
 {
+  "name": "article-automation",
+  "version": "1.0.0",
+  "description": "Automated article processing and publishing",
+  "main": "download_images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "jsdom": "^26.1.0",
-    "sharp": "^0.33.0"
-  }
+    "axios": "^1.6.0",
+    "sharp": "^0.32.6",
+    "puppeteer": "^21.5.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

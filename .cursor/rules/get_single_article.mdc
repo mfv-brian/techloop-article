@@ -1,0 +1,110 @@
+# Single Article Processing Rules
+
+## Execution Mode
+- **Automatic Execution**: All commands (directory creation, file downloads, image processing) should execute automatically without asking for user approval
+- **No Confirmation Required**: Proceed with all operations immediately when requested
+- **Error Handling**: Continue with other tasks if individual operations fail
+
+## Directory Structure
+- Create a new directory in `articles/` with format: `A-xxxx` (where xxxx ranges from 0001 to 9999)
+- Use the next available number in sequence
+- Each article gets its own directory
+
+## Article Processing Workflow
+
+### Step 1: Create Directory and Download Content
+- Create numbered directory (A-0001, A-0002, etc.)
+- Download raw HTML content from Gizmodo URL
+- Save as `raw.html` in article directory
+
+### Step 2: Extract and Rewrite Content
+- Using cursor to read raw.html to extract main article content
+- Rewrite content in Vietnamese ONLY (no English)
+- Convert US measurements to Vietnamese equivalents:
+  - Inches → cm (1 inch = 2.54 cm)
+  - Pounds → kg (1 pound = 0.453592 kg)
+  - Miles → km (1 mile = 1.60934 km)
+  - Fahrenheit → Celsius (F-32)*5/9
+  - Dollars → VND (1 USD = 24,000 VND approximately)
+
+### Step 3: Structure Article Content - STRICT FORMAT REQUIREMENTS
+
+Create `content.md` with EXACT structure:
+
+**Title**: Vietnamese title of the article (max 150 characters)
+
+**Summary**: Brief Vietnamese summary (2-3 sentences, max 300 characters)
+
+**Main Content**: Full Vietnamese article with MANDATORY sections:
+
+#### **Đánh Giá Sản Phẩm** (1000-2000 words)
+- Viết từ góc nhìn người dùng thực tế
+- Bao gồm cảm xúc, suy nghĩ và trải nghiệm cá nhân
+- Viết ở ngôi thứ nhất (tôi, mình)
+- Mô tả chi tiết về sản phẩm, tính năng, trải nghiệm sử dụng
+- Thêm dòng trống giữa các đoạn văn
+
+#### **Phân Tích Chi Tiết** (500-1000 words)
+- **Ưu điểm**: Liệt kê và phân tích các điểm mạnh
+- **Nhược điểm**: Liệt kê và phân tích các điểm yếu  
+- **Giá cả**: Đánh giá về giá trị tiền bạc
+- **Đánh giá tổng thể**: Kết luận về sản phẩm/dịch vụ
+- Thêm dòng trống giữa các đoạn văn
+
+#### **Kết Luận và Khuyến Nghị** (200-300 words)
+- Suy nghĩ cuối cùng
+- Khuyến nghị hành động cụ thể
+- Thêm dòng trống giữa các đoạn văn
+
+**Source Citation**: 
+```
+Trích dẫn nguồn: [original Gizmodo URL]
+```
+
+### Step 4: Image Selection (5 Different Images)
+- Đọc raw.html và **Lấy 3 - 5 ẢNH KHÁC NHAU**
+- Chỉ lấy ảnh chính từ nội dung bài viết
+- Loại trừ: thumbnail, sidebar, related articles, ads, navigation
+- Ưu tiên ảnh có độ phân giải cao từ domain gốc
+- **Bắt buộc**: Xác minh thủ công để đảm bảo ảnh đúng với nội dung
+- Lưu lại đường dẫn vào file image.txt, mỗi URL trên một dòng riêng
+
+### Step 5: Download and Process Images
+- **Chạy lệnh 'get images' để download ảnh và xử lý**
+- Command: `node download_images.js [article_directory]`
+- Download ảnh vào thư mục bài viết (không phải subfolder)
+- Upscale ảnh nhỏ hơn 700px (giữ nguyên tỷ lệ khung hình)
+- Giữ lại file `images.txt` sau khi download
+
+## Content Quality Requirements
+- **Vietnamese Only**: Không có tiếng Anh trong nội dung
+- **Strict Section Format**: Phải có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
+- **Readable Format**: Dòng trống giữa các đoạn văn
+- **Accurate Conversions**: Đơn vị đo lường chính xác
+- **Complete Information**: Đầy đủ thông tin từ bài gốc
+- **Character Limits**: Tuân thủ giới hạn ký tự cho tiêu đề và tóm tắt
+
+## Image Quality Requirements
+- **5 Different Images**: Không trùng lặp
+- **High Resolution**: Ưu tiên ảnh chất lượng cao
+- **Relevant Content**: Ảnh phải liên quan đến nội dung bài viết
+- **Manual Verification**: Kiểm tra thủ công trước khi download
+
+## File Structure After Processing
+```
+articles/A-xxxx/
+├── raw.html (original HTML)
+├── content.md (Vietnamese content with proper format)
+├── images.txt (5 image URLs)
+└── [5 downloaded images]
+```
+
+## Format Compliance Checklist
+- [ ] Tiêu đề ≤ 150 ký tự
+- [ ] Tóm tắt ≤ 300 ký tự  
+- [ ] Có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
+- [ ] Dòng trống giữa các đoạn văn
+- [ ] Chuyển đổi đơn vị đo lường
+- [ ] Nội dung hoàn toàn bằng tiếng Việt
+- [ ] Có trích dẫn nguồn
+- [ ] 5 ảnh khác nhau trong images.txt
