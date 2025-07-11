@@ -12,12 +12,20 @@
 
 ## Article Processing Workflow
 
-### Step 1: Create Directory and Download Content
-- Create numbered directory (A-0001, A-0002, etc.)
-- Download raw HTML content from Gizmodo URL
-- Save as `raw.html` in article directory
+### Step 0: Batch Download Articles (REQUIRED FIRST STEP)
+- **Before processing any article, ALWAYS run batch downloader first:**
+  ```bash
+  node batch_downloader.js
+  ```
+- This will:
+  - Download all articles from `articles/today-articles.md`
+  - Create numbered directories (A-0001, A-0002, etc.)
+  - Download `raw.html` for each article
+- **No image extraction or download at this step**
+- **Only proceed to article processing after batch download is complete**
+- Use the created directories for individual article processing
 
-### Step 2: Extract and Rewrite Content
+### Step 1: Structure Article Content - STRICT FORMAT REQUIREMENTS
 - Using cursor to read raw.html to extract main article content
 - Rewrite content in Vietnamese ONLY (no English)
 - Convert US measurements to Vietnamese equivalents:
@@ -26,8 +34,6 @@
   - Miles → km (1 mile = 1.60934 km)
   - Fahrenheit → Celsius (F-32)*5/9
   - Dollars → VND (1 USD = 24,000 VND approximately)
-
-### Step 3: Structure Article Content - STRICT FORMAT REQUIREMENTS
 
 Create `content.md` with EXACT structure:
 
@@ -61,43 +67,18 @@ Create `content.md` with EXACT structure:
 Trích dẫn nguồn: [original Gizmodo URL]
 ```
 
-### Step 4: Image Selection (5 Different Images)
-- Đọc raw.html và **Lấy 3 - 5 ẢNH KHÁC NHAU**
-- Chỉ lấy ảnh chính từ nội dung bài viết
-- Loại trừ: thumbnail, sidebar, related articles, ads, navigation
-- Ưu tiên ảnh có độ phân giải cao từ domain gốc
-- **Bắt buộc**: Xác minh thủ công để đảm bảo ảnh đúng với nội dung
-- Lưu lại đường dẫn vào file image.txt, mỗi URL trên một dòng riêng
-
-### Step 5: Download and Process Images
-- **Chạy lệnh 'get images' để download ảnh và xử lý**
-- Command: `node download_images.js [article_directory]`
-- Download ảnh vào thư mục bài viết (không phải subfolder)
-- Upscale ảnh nhỏ hơn 700px (giữ nguyên tỷ lệ khung hình)
-- Giữ lại file `images.txt` sau khi download
-
-## Content Quality Requirements
-- **Vietnamese Only**: Không có tiếng Anh trong nội dung
-- **Strict Section Format**: Phải có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
-- **Readable Format**: Dòng trống giữa các đoạn văn
-- **Accurate Conversions**: Đơn vị đo lường chính xác
-- **Complete Information**: Đầy đủ thông tin từ bài gốc
-- **Character Limits**: Tuân thủ giới hạn ký tự cho tiêu đề và tóm tắt
-
-## Image Quality Requirements
-- **5 Different Images**: Không trùng lặp
-- **High Resolution**: Ưu tiên ảnh chất lượng cao
-- **Relevant Content**: Ảnh phải liên quan đến nội dung bài viết
-- **Manual Verification**: Kiểm tra thủ công trước khi download
-
-## File Structure After Processing
-```
-articles/A-xxxx/
-├── raw.html (original HTML)
-├── content.md (Vietnamese content with proper format)
-├── images.txt (5 image URLs)
-└── [5 downloaded images]
-```
+### Step 2: Image Selection & Download
+- Trong khi đọc raw.html, xác định các ảnh thuộc bài viết (không lấy ảnh bài liên quan)
+- Tạo danh sách 5 ảnh phù hợp nhất, ghi vào `images.txt` (1 URL mỗi dòng)
+- **Sau khi đã có images.txt, chạy:**
+  ```bash
+  node download_images.js
+  ```
+- Script này sẽ tự động tải các ảnh trong images.txt về đúng thư mục bài viết
+- **Giữ nguyên file raw.html - không xóa đi**
+- **Xử lý lỗi**: Nếu có lỗi khi tải ảnh (404, network error, etc.), bỏ qua và tiếp tục với ảnh tiếp theo
+- **Không dừng script**: Script sẽ tiếp tục chạy cho đến khi hoàn thành tất cả ảnh, báo cáo số ảnh thành công/thất bại
+- Sau khi tải xong, chỉ giữ lại các ảnh đã tải thành công trong thư mục (xóa ảnh thừa nếu có)
 
 ## Format Compliance Checklist
 - [ ] Tiêu đề ≤ 150 ký tự
@@ -107,4 +88,4 @@ articles/A-xxxx/
 - [ ] Chuyển đổi đơn vị đo lường
 - [ ] Nội dung hoàn toàn bằng tiếng Việt
 - [ ] Có trích dẫn nguồn
-- [ ] 5 ảnh khác nhau trong images.txt
+- [ ] 5 ảnh khác nhau được chọn từ images.txt và đã được tải về
