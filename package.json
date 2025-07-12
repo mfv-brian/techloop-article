@@ -4,12 +4,14 @@
   "description": "Automated article processing and publishing",
   "main": "download_images.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node watch_images.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
-    "sharp": "^0.32.6",
-    "puppeteer": "^21.5.2"
+    "chokidar": "^4.0.3",
+    "puppeteer": "^21.5.2",
+    "sharp": "^0.32.6"
   },
   "keywords": [],
   "author": "",

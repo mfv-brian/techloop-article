@@ -79,6 +79,8 @@ Trích dẫn nguồn: [original Gizmodo URL]
 
 ### Step 2: Image Selection & Download
 - Trong khi đọc raw.html, xác định các ảnh thuộc bài viết (không lấy ảnh bài liên quan)
+- **Ưu tiên lấy ảnh từ header/featured image của bài viết trước**
+- Sau đó chọn thêm các ảnh khác từ nội dung bài viết
 - Tạo danh sách 5 ảnh phù hợp nhất, ghi vào `images.txt` (1 URL mỗi dòng)
 - **Sau khi đã có images.txt, chạy:**
   ```bash
