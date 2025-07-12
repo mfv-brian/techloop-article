@@ -41,26 +41,36 @@ Create `content.md` with EXACT structure:
 
 **Summary**: Brief Vietnamese summary (2-3 sentences, max 300 characters)
 
-**Main Content**: Full Vietnamese article with MANDATORY sections:
+**Main Content**: Full Vietnamese article with format based on article type:
 
-#### **Đánh Giá Sản Phẩm** (1000-2000 words)
+#### **FOR PRODUCT REVIEW ARTICLES** - Follow existing format:
+
+##### **Đánh Giá Sản Phẩm** (1000-2000 words)
 - Viết từ góc nhìn người dùng thực tế
 - Bao gồm cảm xúc, suy nghĩ và trải nghiệm cá nhân
 - Viết ở ngôi thứ nhất (tôi, mình)
 - Mô tả chi tiết về sản phẩm, tính năng, trải nghiệm sử dụng
 - Thêm dòng trống giữa các đoạn văn
 
-#### **Phân Tích Chi Tiết** (500-1000 words)
+##### **Phân Tích Chi Tiết** (500-1000 words)
 - **Ưu điểm**: Liệt kê và phân tích các điểm mạnh
 - **Nhược điểm**: Liệt kê và phân tích các điểm yếu  
 - **Giá cả**: Đánh giá về giá trị tiền bạc
 - **Đánh giá tổng thể**: Kết luận về sản phẩm/dịch vụ
 - Thêm dòng trống giữa các đoạn văn
 
-#### **Kết Luận và Khuyến Nghị** (200-300 words)
+##### **Kết Luận và Khuyến Nghị** (200-300 words)
 - Suy nghĩ cuối cùng
 - Khuyến nghị hành động cụ thể
 - Thêm dòng trống giữa các đoạn văn
+
+#### **FOR JOURNALISTIC/NEWS ARTICLES** - Maintain original format:
+- Giữ nguyên cấu trúc và format của bài báo gốc
+- Chỉ chuyển đổi ngôn ngữ sang tiếng Việt
+- Chuyển đổi đơn vị đo lường theo quy định
+- **Nếu bài viết dài hơn 2000 từ, viết lại trong khuôn khổ 2000 từ**
+- Giữ nguyên thông tin quan trọng và sự kiện chính
+- Đảm bảo tính chính xác và khách quan của thông tin
 
 **Source Citation**: 
 ```
@@ -83,7 +93,8 @@ Trích dẫn nguồn: [original Gizmodo URL]
 ## Format Compliance Checklist
 - [ ] Tiêu đề ≤ 150 ký tự
 - [ ] Tóm tắt ≤ 300 ký tự  
-- [ ] Có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
+- [ ] **Product Reviews**: Có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
+- [ ] **Journalistic Articles**: Giữ nguyên format gốc, tối đa 2000 từ
 - [ ] Dòng trống giữa các đoạn văn
 - [ ] Chuyển đổi đơn vị đo lường
 - [ ] Nội dung hoàn toàn bằng tiếng Việt
