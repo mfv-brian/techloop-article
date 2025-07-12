@@ -1,9 +1,5 @@
-
-# Keep the articles directory structure but ignore all files inside
 articles
-
-# Keep today-articles.md if it exists
-!articles/today-articles.md
+temp
 
 # Node modules
 node_modules/

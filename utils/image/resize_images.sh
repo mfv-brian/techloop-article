@@ -2,6 +2,7 @@
 
 # Techloop Image Resizer
 # Resize images so that the smaller dimension becomes 700px while maintaining aspect ratio
+# Overwrites the original file
 
 # Check if ImageMagick is installed
 if ! command -v magick &> /dev/null; then
@@ -13,7 +14,6 @@ fi
 # Function to resize image
 resize_image() {
     local input_file="$1"
-    local output_file="$2"
     
     # Get original dimensions using magick identify
     local dimensions=$(magick identify -format "%wx%h" "$input_file" 2>/dev/null)
@@ -39,20 +39,27 @@ resize_image() {
         return 0
     fi
     
+    # Create temporary file for resizing
+    local temp_file=$(mktemp)
+    
     # Resize so that the smaller dimension becomes 700px
     # Use 700x700^ to make the smaller dimension exactly 700px
-    magick "$input_file" -resize "700x700^" "$output_file"
+    magick "$input_file" -resize "700x700^" "$temp_file"
     
     if [ $? -eq 0 ]; then
-        local new_dimensions=$(magick identify -format "%wx%h" "$output_file" 2>/dev/null)
+        # Move temporary file to overwrite original
+        mv "$temp_file" "$input_file"
+        
+        local new_dimensions=$(magick identify -format "%wx%h" "$input_file" 2>/dev/null)
         if [ $? -eq 0 ]; then
             echo "Resized to: $new_dimensions"
         else
             echo "Resized successfully"
         fi
-        echo "Saved as: $output_file"
+        echo "Updated: $input_file"
     else
         echo "Error: Failed to resize image"
+        rm -f "$temp_file"
         return 1
     fi
 }
@@ -80,15 +87,8 @@ for file in "$@"; do
     
     echo "Processing: $file"
     
-    # Get file extension
-    extension="${file##*.}"
-    filename="${file%.*}"
-    
-    # Create output filename
-    output_file="${filename}_resized.${extension}"
-    
-    # Resize the image
-    resize_image "$file" "$output_file"
+    # Resize the image (overwrites original)
+    resize_image "$file"
     
     echo "---"
 done
