@@ -45,32 +45,36 @@ Create `content.md` with EXACT structure:
 
 #### **FOR PRODUCT REVIEW ARTICLES** - Follow existing format:
 
-##### **Đánh Giá Sản Phẩm** (1000-2000 words)
+##### **Đánh Giá Sản Phẩm** (3000-6000 words - TĂNG GẤP 3 LẦN)
 - Viết từ góc nhìn người dùng thực tế
 - Bao gồm cảm xúc, suy nghĩ và trải nghiệm cá nhân
 - Viết ở ngôi thứ nhất (tôi, mình)
 - Mô tả chi tiết về sản phẩm, tính năng, trải nghiệm sử dụng
 - Thêm dòng trống giữa các đoạn văn
+- **Mở rộng nội dung**: Thêm chi tiết về thiết kế, chất liệu, quy trình sản xuất, so sánh với đối thủ cạnh tranh, lịch sử phát triển sản phẩm, xu hướng thị trường
 
-##### **Phân Tích Chi Tiết** (500-1000 words)
+##### **Phân Tích Chi Tiết** (1500-3000 words - TĂNG GẤP 3 LẦN)
 - **Ưu điểm**: Liệt kê và phân tích các điểm mạnh
 - **Nhược điểm**: Liệt kê và phân tích các điểm yếu  
 - **Giá cả**: Đánh giá về giá trị tiền bạc
 - **Đánh giá tổng thể**: Kết luận về sản phẩm/dịch vụ
 - Thêm dòng trống giữa các đoạn văn
+- **Mở rộng nội dung**: Thêm phân tích kỹ thuật sâu, benchmark tests, user feedback tổng hợp, expert opinions, market analysis
 
-##### **Kết Luận và Khuyến Nghị** (200-300 words)
+##### **Kết Luận và Khuyến Nghị** (600-900 words - TĂNG GẤP 3 LẦN)
 - Suy nghĩ cuối cùng
 - Khuyến nghị hành động cụ thể
 - Thêm dòng trống giữa các đoạn văn
+- **Mở rộng nội dung**: Thêm long-term assessment, future outlook, alternative recommendations, value proposition analysis
 
 #### **FOR JOURNALISTIC/NEWS ARTICLES** - Maintain original format:
 - Giữ nguyên cấu trúc và format của bài báo gốc
 - Chỉ chuyển đổi ngôn ngữ sang tiếng Việt
 - Chuyển đổi đơn vị đo lường theo quy định
-- **Nếu bài viết dài hơn 2000 từ, viết lại trong khuôn khổ 2000 từ**
+- **TĂNG GẤP 3 LẦN: Nếu bài viết dài hơn 6000 từ, viết lại trong khuôn khổ 6000 từ**
 - Giữ nguyên thông tin quan trọng và sự kiện chính
 - Đảm bảo tính chính xác và khách quan của thông tin
+- **Mở rộng nội dung**: Thêm background information, historical context, expert analysis, related developments, future implications
 
 **Source Citation**: 
 ```
@@ -95,8 +99,8 @@ Trích dẫn nguồn: [original Gizmodo URL]
 ## Format Compliance Checklist
 - [ ] Tiêu đề ≤ 150 ký tự
 - [ ] Tóm tắt ≤ 300 ký tự  
-- [ ] **Product Reviews**: Có đầy đủ 3 phần: Đánh Giá Sản Phẩm, Phân Tích Chi Tiết, Kết Luận
-- [ ] **Journalistic Articles**: Giữ nguyên format gốc, tối đa 2000 từ
+- [ ] **Product Reviews**: Có đầy đủ 3 phần: Đánh Giá Sản Phẩm (3000-6000 từ), Phân Tích Chi Tiết (1500-3000 từ), Kết Luận (600-900 từ)
+- [ ] **Journalistic Articles**: Giữ nguyên format gốc, tối đa 6000 từ (TĂNG GẤP 3 LẦN)
 - [ ] Dòng trống giữa các đoạn văn
 - [ ] Chuyển đổi đơn vị đo lường
 - [ ] Nội dung hoàn toàn bằng tiếng Việt
