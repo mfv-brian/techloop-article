@@ -1,3 +1,7 @@
+---
+alwaysApply: false
+---
+
 # Single Article Processing Rules
 
 ## Execution Mode
@@ -37,49 +41,50 @@
 
 Create `content.md` with EXACT structure:
 
-**Title**: Vietnamese title of the article (max 150 characters)
-
-**Summary**: Brief Vietnamese summary (2-3 sentences, max 300 characters)
-
-**Main Content**: Full Vietnamese article with format based on article type:
-
-#### **FOR PRODUCT REVIEW ARTICLES** - Follow existing format:
-
-##### **Đánh Giá Sản Phẩm** (3000-6000 words - TĂNG GẤP 3 LẦN)
-- Viết từ góc nhìn người dùng thực tế
-- Bao gồm cảm xúc, suy nghĩ và trải nghiệm cá nhân
-- Viết ở ngôi thứ nhất (tôi, mình)
-- Mô tả chi tiết về sản phẩm, tính năng, trải nghiệm sử dụng
-- Thêm dòng trống giữa các đoạn văn
-- **Mở rộng nội dung**: Thêm chi tiết về thiết kế, chất liệu, quy trình sản xuất, so sánh với đối thủ cạnh tranh, lịch sử phát triển sản phẩm, xu hướng thị trường
-
-##### **Phân Tích Chi Tiết** (1500-3000 words - TĂNG GẤP 3 LẦN)
-- **Ưu điểm**: Liệt kê và phân tích các điểm mạnh
-- **Nhược điểm**: Liệt kê và phân tích các điểm yếu  
-- **Giá cả**: Đánh giá về giá trị tiền bạc
-- **Đánh giá tổng thể**: Kết luận về sản phẩm/dịch vụ
-- Thêm dòng trống giữa các đoạn văn
-- **Mở rộng nội dung**: Thêm phân tích kỹ thuật sâu, benchmark tests, user feedback tổng hợp, expert opinions, market analysis
-
-##### **Kết Luận và Khuyến Nghị** (600-900 words - TĂNG GẤP 3 LẦN)
-- Suy nghĩ cuối cùng
-- Khuyến nghị hành động cụ thể
-- Thêm dòng trống giữa các đoạn văn
-- **Mở rộng nội dung**: Thêm long-term assessment, future outlook, alternative recommendations, value proposition analysis
-
-#### **FOR JOURNALISTIC/NEWS ARTICLES** - Maintain original format:
-- Giữ nguyên cấu trúc và format của bài báo gốc
-- Chỉ chuyển đổi ngôn ngữ sang tiếng Việt
-- Chuyển đổi đơn vị đo lường theo quy định
-- **TĂNG GẤP 3 LẦN: Nếu bài viết dài hơn 6000 từ, viết lại trong khuôn khổ 6000 từ**
-- Giữ nguyên thông tin quan trọng và sự kiện chính
-- Đảm bảo tính chính xác và khách quan của thông tin
-- **Mở rộng nội dung**: Thêm background information, historical context, expert analysis, related developments, future implications
-
-**Source Citation**: 
-```
-Trích dẫn nguồn: [original Gizmodo URL]
-```
+Viết lại bài báo bằng tiếng việt 
+- theo format: tiêu đề, tóm tắt, nội dung, kết luận, trích dẫn nguồn
+- Tiêu đề giới hạn 150 kí tự, đặt title giật gân, thu hút sự chú ý của độc giả
+- Tóm tắt giới hạn 300 kí tự
+- Nội dung:
+  - độ dài tối thiểu 4000 chữ 
+  - độ dài tối đa 6000 từ
+  - Nếu là bài viết đánh giá sản phẩm, hãy tuân theo format: 
+    1. Đánh Giá Sản Phẩm:
+      - Viết từ góc nhìn người dùng thực tế
+      - Bao gồm cảm xúc, suy nghĩ và trải nghiệm cá nhân, viết ở ngôi thứ nhất (tôi, mình)
+      - Mô tả chi tiết về sản phẩm, tính năng, trải nghiệm sử dụng
+      - Thêm chi tiết về thiết kế, chất liệu, quy trình sản xuất, so sánh với đối thủ cạnh tranh, lịch sử phát triển sản phẩm, xu hướng thị trường
+    2. Phân Tích Chi Tiết: 
+      - Ưu điểm: Liệt kê và phân tích các điểm mạnh
+      - Nhược điểm: Liệt kê và phân tích các điểm yếu  
+      - Giá cả: Đánh giá về giá trị tiền bạc
+      - Đánh giá tổng thể: Kết luận về sản phẩm/dịch vụ
+      - Thêm dòng trống giữa các đoạn văn
+      - **Mở rộng nội dung**: Thêm phân tích kỹ thuật sâu, benchmark tests, user feedback tổng hợp, expert opinions, market analysis
+    3. Kết Luận và Khuyến Nghị:
+      - Suy nghĩ cuối cùng
+      - Khuyến nghị hành động cụ thể
+      - Thêm dòng trống giữa các đoạn văn
+      - **Mở rộng nội dung**: Thêm long-term assessment, future outlook, alternative recommendations, value proposition analysis
+  - Nếu là bài viết báo chí: 
+    - Giữ nguyên cấu trúc và format của bài báo gốc
+    - Chỉ chuyển đổi ngôn ngữ sang tiếng Việt
+    - Chuyển đổi đơn vị đo lường theo quy định
+    - Giữ nguyên thông tin quan trọng và sự kiện chính
+    - Đảm bảo tính chính xác và khách quan của thông tin
+    - **Mở rộng nội dung**: Thêm background information, historical context, expert analysis, related developments, future implications
+- Chuyển đổi đơn vị:  
+  - USD hoặc $ đổi thành đô la
+  - các đơn vị đo lường của Mỹ tự động đổi thành của Việt Nam 
+    - miles -> km
+    - feet -> mét
+    - inch -> cm
+    - pound -> kg
+    - gallon -> lít
+    - mile per hour -> km/h
+    - mile per gallon -> km/l
+    - mile per gallon -> km/l
+    - F -> C
 
 ### Step 2: Image Selection & Download
 - Trong khi đọc raw.html, xác định các ảnh thuộc bài viết (không lấy ảnh bài liên quan)
